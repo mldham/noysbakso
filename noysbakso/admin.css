@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=PT+Sans&family=Ubuntu:wght@300&display=swap');
+
+.container {
+  height: 100vh;
+}
+
+.chart-wrapper {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+body{
+display:flex;
+background:#f4f6f9;
+font-family: 'Ubuntu', sans-serif;
+margin: 0;
+}
+
+.sidebar{
+width:220px;
+background:#2c3e50;
+min-height:100vh;
+color:white;
+padding-top:20px;
+box-shadow:2px 0 10px rgba(0,0,0,0.1);
+position:fixed;
+left:0;
+top:0;
+}
+
+.sidebar img{
+display:block;
+margin:0 auto 10px;
+}
+
+.sidebar h3{
+text-align:center;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:15px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#34495e;
+}
+
+
+.content{
+flex:1;
+padding:30px;
+margin-left:220px;
+}
+
+.card-stat{
+border-radius:10px;
+padding:20px;
+color:white;
+}
+
+.bg1{background:#3498db;}
+.bg2{background:#2ecc71;}
+.bg3{background:#9b59b6;}
+
+.chart-box{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}

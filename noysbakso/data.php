@@ -3,7 +3,7 @@ include 'connect.php';
 
 session_start();
 
-$sql = "SELECT pesanan_id, no_user, alamat, pengiriman, payment, total_bayar FROM pemesanan";
+$sql = "SELECT nama_produk, harga FROM produk";
 $result = $conn->query($sql);
 
 
@@ -39,17 +39,13 @@ $result = $conn->query($sql);
 
   <div class="data">
     <center>
-      <h1>DATA PENJUALAN</h1>
+      <h1>Daftar Menu</h1>
     </center>
     <table cellspacing='0'>
       <thead>
         <tr>
-          <th>pesanan id</th>
-          <th>no user</th>
-          <th>alamat</th>
-          <th>pengiriman</th>
-          <th>payment</th>
-          <th>total bayar</th>
+          <th>Nama Produk</th>
+          <th>Harga</th>
         </tr>
       </thead>
       <tbody>
@@ -58,12 +54,8 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row["pesanan_id"] . "</td>";
-            echo "<td>" . $row["no_user"] . "</td>";
-            echo "<td>" . $row["alamat"] . "</td>";
-            echo "<td>" . $row["pengiriman"] . "</td>";
-            echo "<td>" . $row["payment"] . "</td>";
-            echo "<td>" . $row["total_bayar"] . "</td>";
+            echo "<td>" . $row["nama_produk"] . "</td>";
+            echo "<td>" . $row["harga"] . "</td>";
             echo "</tr>";
           }
         } else {

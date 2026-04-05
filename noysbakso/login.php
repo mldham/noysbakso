@@ -1,33 +1,45 @@
 <?php
-    session_start();
-    include 'connect.php';
+session_start();
+include 'connect.php';
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['Username'];
-        $email = $_POST['Email'];
-        $password = $_POST['Pw'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['Username'];
+    $email = $_POST['Email'];
+    $password = $_POST['Pw'];
 
-        $query = "SELECT no_user, Username, Email FROM user_acc WHERE (Username = ? OR Email = ?) AND Pw = ?";
-        
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("sss", $username, $email, $password);
-        
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
+    $query = "SELECT no_user, Username, Email 
+              FROM user_acc 
+              WHERE (Username = ? OR Email = ?) AND Pw = ?";
 
-            if ($result->num_rows == 1) {
-                $user = $result->fetch_assoc();
-                $_SESSION['user_id'] = $user['no_user'];
-                $_SESSION['username'] = $user['Username'];
-                header('Location: index.html'); 
-                exit();
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sss", $username, $email, $password);
+
+    if ($stmt->execute()) {
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            $_SESSION['user_id'] = $user['no_user'];
+            $_SESSION['username'] = $user['Username'];
+
+            // CEK USERNAME
+            if ($user['Username'] === 'admin' || $user['Username'] === 'Admin1') {
+                header('Location: admin.html');
             } else {
-                echo "try again";
+                header('Location: index.html');
             }
-        } else {
-            echo "Error executing the query: " . $stmt->error;
-        }
 
-        $stmt->close();
+            exit();
+        } else {
+            echo "<script>
+                    alert('Try Again');
+                    window.history.back();
+                  </script>";
+        }
+    } else {
+        echo "<script>alert('Error: ".$stmt->error."');</script>";
     }
-    ?>
+
+    $stmt->close();
+}
+?>
