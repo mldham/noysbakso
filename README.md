@@ -1,6 +1,5 @@
 # NoysBakso - Web-Based Point of Sales & Order Management
 
-## 📖 Deskripsi Proyek
 NoysBakso adalah aplikasi web *full-stack* yang dirancang untuk mendigitalisasi proses pemesanan pada bisnis F&B (Food & Beverage). Proyek ini dikembangkan sebagai **Tugas Akhir Sekolah**, yang sekaligus menjadi titik awal ketertarikan saya dalam membangun arsitektur perangkat lunak dan mengelola sistem basis data.
 
 Meskipun berawal dari sekolah, sistem ini dikembangkan dengan mengadopsi alur kerja nyata: memungkinkan pelanggan melihat katalog menu, melakukan pesanan, dan mencatat transaksi secara terpusat yang mencerminkan cara kerja dasar dari modul **Sales & Order Management** skala mikro.
@@ -12,7 +11,7 @@ Meskipun berawal dari sekolah, sistem ini dikembangkan dengan mengadopsi alur ke
 
 ## 🛠️ Tech Stack
 - **Front-End:** HTML, CSS, JavaScript
-- **Back-End:** PHP (Native)
+- **Back-End:** PHP
 - **Database:** MySQL
 
 ## 🗄️ Skema Database Terkait
