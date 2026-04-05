@@ -1,14 +1,3 @@
-function showPage(page){
-
-document.getElementById("dashboard").style.display="none"
-document.getElementById("penjualan").style.display="none"
-
-document.getElementById(page).style.display="block"
-
-}
-
-
-
 // PIE CHART
 fetch('piechart.php')
 .then(res=>res.json())
@@ -42,33 +31,20 @@ backgroundColor:[
 })
 
 
-
-// TABEL PENJUALAN
+// TABEL PENJUALAN (TOTAL PRODUK)
 fetch('penjualan.php')
 .then(res=>res.json())
 .then(data=>{
 
-let table=""
 let totalProduk=0
 
 data.forEach(item=>{
-
 totalProduk += parseInt(item.total)
-
-table+=`
-<tr>
-<td>${item.nama_produk}</td>
-<td>${item.total}</td>
-</tr>
-`
-
 })
 
-document.getElementById("tabelPenjualan").innerHTML=table
 document.getElementById("totalProduk").innerHTML=totalProduk
 
 })
-
 
 
 // TREN PENJUALAN
@@ -104,7 +80,6 @@ fill:true
 })
 
 
-
 // TOP PRODUK
 fetch('topproduk.php')
 .then(res=>res.json())
@@ -136,7 +111,6 @@ backgroundColor:'#2ecc71'
 })
 
 
-
 // STATISTIK
 fetch('statistik.php')
 .then(res=>res.json())
@@ -144,6 +118,5 @@ fetch('statistik.php')
 
 document.getElementById("totalPesanan").innerHTML=data.total_pesanan
 document.getElementById("totalPendapatan").innerHTML="Rp "+data.total_pendapatan
-
 
 })

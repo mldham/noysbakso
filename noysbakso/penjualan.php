@@ -13,22 +13,31 @@ include "connect.php";
 
 <style>
 
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 body{
 display:flex;
 background:#f4f6f9;
+font-family: 'Ubuntu', sans-serif;
 margin:0;
-font-family:Arial;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-width:220px;
-background:#2c3e50;
-min-height:100vh;
-color:white;
-padding-top:20px;
-position:fixed;
+    width:220px;
+    background:#2c3e50;
+    min-height:100vh;
+    color:white;
+    padding-top:20px;
+    box-shadow:2px 0 10px rgba(0,0,0,0.1);
+    position:fixed;
+    left:0;
+    top:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 .sidebar h2{
@@ -45,6 +54,25 @@ text-decoration:none;
 
 .sidebar a:hover{
 background:#34495e;
+}
+
+/* LOGOUT */
+.logout{
+padding:10px;
+}
+
+.logout a{
+display:block;
+background:#e74c3c;
+padding:12px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.logout a:hover{
+background:#c0392b;
 }
 
 /* CONTENT */
@@ -69,12 +97,21 @@ box-shadow:0 3px 10px rgba(0,0,0,0.05);
 
 <div class="sidebar">
 
-<h2>Admin Panel</h2>
+    <div>
+        <h2>Admin Panel</h2>
 
-<a href="admin.html">Dashboard</a>
-<a href="produk.php">Produk</a>
-<a href="pesanan.php">Pesanan</a>
-<a href="penjualan.php">Penjualan</a>
+        <div class="menu">
+            <a href="admin.html">Dashboard</a>
+            <a href="produk.php">Produk</a>
+            <a href="pesanan.php">Pesanan</a>
+            <a href="penjualan.php">Penjualan</a>
+        </div>
+    </div>
+
+    <!-- LOGOUT -->
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
 
 </div>
 

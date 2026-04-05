@@ -7,70 +7,79 @@
 
 <title>Admin Dashboard</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=PT+Sans&family=Ubuntu:wght@300&display=swap');
-
-.container {
-  height: 100vh;
-}
-
-.chart-wrapper {
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 body{
 display:flex;
 background:#f4f6f9;
 font-family: 'Ubuntu', sans-serif;
-margin: 0;
+margin:0;
 }
 
+/* SIDEBAR */
 .sidebar{
 width:220px;
 background:#2c3e50;
 min-height:100vh;
 color:white;
-padding-top:20px;
-box-shadow:2px 0 10px rgba(0,0,0,0.1);
 position:fixed;
 left:0;
 top:0;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
 
-.sidebar img{
-display:block;
-margin:0 auto 10px;
-}
-
-.sidebar h3{
+.sidebar h2{
 text-align:center;
-margin-bottom:30px;
+margin:20px 0;
 }
 
-.sidebar a{
+/* MENU */
+.menu a{
 display:block;
 color:white;
 padding:15px;
 text-decoration:none;
 }
 
-.sidebar a:hover{
+.menu a:hover{
 background:#34495e;
 }
 
+/* LOGOUT */
+.logout{
+padding:10px;
+}
 
+.logout a{
+display:block;
+background:#e74c3c;
+padding:12px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.logout a:hover{
+background:#c0392b;
+}
+
+/* CONTENT */
 .content{
 flex:1;
 padding:30px;
 margin-left:220px;
 }
 
+/* CARD */
 .card-stat{
 border-radius:10px;
 padding:20px;
@@ -96,24 +105,32 @@ margin-bottom:20px;
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-    <h2>Admin Panel</h2>
 
-    <a href="admin.html">Dashboard</a>
-    <a href="produk.php">Produk</a>
-    <a href="pesanan.php">Pesanan</a>
-    <a href="penjualan.php">Penjualan</a>
+    <div>
+        <h2>Admin Panel</h2>
+
+        <div class="menu">
+            <a href="admin.html">Dashboard</a>
+            <a href="produk.php">Produk</a>
+            <a href="pesanan.php">Pesanan</a>
+            <a href="penjualan.php">Penjualan</a>
+        </div>
+    </div>
+
+    <!-- LOGOUT -->
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+
 </div>
 
 
+<!-- CONTENT -->
 <div class="content">
-
-<!-- DASHBOARD -->
-<div id="dashboard">
 
 <h3 class="mb-4">Data Penjualan</h3>
 
-
-<!-- STAT CARD -->
+<!-- STAT -->
 <div class="row mb-4">
 
 <div class="col-md-4">
@@ -139,7 +156,7 @@ margin-bottom:20px;
 
 </div>
 
-
+<!-- CHART -->
 <div class="row">
 
 <div class="col-md-4">
@@ -149,7 +166,6 @@ margin-bottom:20px;
 </div>
 </div>
 
-
 <div class="col-md-8">
 <div class="chart-box">
 <h5>Tren Penjualan</h5>
@@ -158,7 +174,6 @@ margin-bottom:20px;
 </div>
 
 </div>
-
 
 <div class="row">
 

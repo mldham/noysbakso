@@ -2,19 +2,72 @@
 include "connect.php";
 ?>
 
-<link rel="stylesheet" href="admin.css">
 
 <style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f4f6f9;
+display:flex;
+background:#f4f6f9;
+font-family: 'Ubuntu', sans-serif;
+margin:0;
 }
 
 .content{
     margin-left:220px;
     padding:30px;
+}
+
+/* SIDEBAR */
+.sidebar{
+width:220px;
+background:#2c3e50;
+min-height:100vh;
+color:white;
+position:fixed;
+left:0;
+top:0;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.sidebar h2{
+text-align:center;
+margin:20px 0;
+}
+
+/* MENU */
+.menu a{
+display:block;
+color:white;
+padding:15px;
+text-decoration:none;
+}
+
+.menu a:hover{
+background:#34495e;
+}
+
+/* LOGOUT */
+.logout{
+padding:10px;
+}
+
+.logout a{
+display:block;
+background:#e74c3c;
+padding:12px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.logout a:hover{
+background:#c0392b;
 }
 
 h2{
@@ -51,17 +104,47 @@ tr:hover{
     font-weight:bold;
 }
 
+/* LOGOUT */
+.logout{
+padding:10px;
+}
+
+.logout a{
+display:block;
+background:#e74c3c;
+padding:12px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.logout a:hover{
+background:#c0392b;
+}
+
 </style>
 
 <body>
 
 <div class="sidebar">
-    <h2>Admin Panel</h2>
 
-    <a href="admin.html">Dashboard</a>
-    <a href="produk.php">Produk</a>
-    <a href="pesanan.php">Pesanan</a>
-    <a href="penjualan.php">Penjualan</a>
+    <div>
+        <h2>Admin Panel</h2>
+
+        <div class="menu">
+            <a href="admin.html">Dashboard</a>
+            <a href="produk.php">Produk</a>
+            <a href="pesanan.php">Pesanan</a>
+            <a href="penjualan.php">Penjualan</a>
+        </div>
+    </div>
+
+    <!-- LOGOUT -->
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+
 </div>
 
 <div class="content">
