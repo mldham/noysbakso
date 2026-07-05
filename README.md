@@ -18,9 +18,3 @@ Meskipun berawal dari sekolah, sistem ini dikembangkan dengan mengadopsi alur ke
 Sistem memisahkan entitas *Master Data* dan *Transactional Data* sebagai bentuk penerapan normalisasi basis data tingkat dasar:
 - `tabel_produk` (Master): Menyimpan informasi statis seperti nama produk dan harga.
 - `tabel_pemesanan` (Transaksi): Menyimpan riwayat pesanan, informasi input dari pengguna, dan total harga pesanan.
-
-## 💻 Cara Menjalankan Proyek Secara Lokal
-1. Pastikan komputer sudah terinstal *local web server* seperti **XAMPP** atau **Laragon**.
-2. *Clone* repository ini ke dalam direktori `htdocs` (XAMPP) atau `www` (Laragon).
-   ```bash
-   git clone [https://github.com/mldham/noysbakso.git](https://github.com/mldham/noysbakso.git)
