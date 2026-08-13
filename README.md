@@ -17,3 +17,5 @@ Meskipun berawal dari sekolah, sistem ini dikembangkan dengan mengadopsi alur ke
 ## Skema Database
 - `tabel_produk` (Master): Menyimpan informasi statis seperti nama produk dan harga.
 - `tabel_pemesanan` (Transaksi): Menyimpan riwayat pesanan, informasi input dari pengguna, dan total harga pesanan.
+- `tabel_detail_pesanan` (Detail Transaksi): Menyimpan riwayat pesanan, informasi menu apa saja yang dipesan dan berapa jumlahnya.
+- `tabel_user_acc` (Akun): Menyimpan data dari akun yang sudah dibuat oleh user.
