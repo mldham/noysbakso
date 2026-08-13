@@ -8,6 +8,7 @@ Meskipun berawal dari sekolah, sistem ini dikembangkan dengan mengadopsi alur ke
 - **Katalog Menu Digital:** Menampilkan daftar produk beserta harga kepada pengguna.
 - **Perekaman Transaksi:** Menangkap input pesanan dari pelanggan untuk diteruskan ke sistem.
 - **Penyimpanan Terpusat:** Menggunakan *relational database* untuk memastikan integritas data pesanan, memastikan pencatatan transaksi berjalan rapi tanpa data yang hilang.
+- **Analisi Penjualan:** Menampilkan analisis penjualan berdasarkan data yang sudah tersimpan di database dengan login menggunakan akun admin.
 
 ## Tech Stack
 - **Front-End:** HTML, CSS, JavaScript
